@@ -4,23 +4,14 @@ const addVisualHelp = elem => {
   tableElem.insertAdjacentHTML(
     "beforeend",
     `
-    <thead>
-      <tr>
-        <th style="color:red">Disabled</th>
-      </tr>
-      <tr>
-        <th>Button</th>
-        <th>Description</th>
-      </tr>
-    </thead>
     <tbody>
       <tr>
-        <td>1</td>
-        <td>START AI</td>
+        <td>Status</td>
+        <td style="color:red">Disabled</td>
       </tr>
       <tr>
-        <td>2</td>
-        <td>STOP AI</td>
+        <td>Start/Stop AI</td>
+        <td>Press Button "1"</td>
       </tr>
     </tbody>
   `

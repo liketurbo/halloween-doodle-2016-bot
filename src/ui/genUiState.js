@@ -1,14 +1,14 @@
 const genState = tableElem => {
-  const firstRow = tableElem.querySelector("tr")
+  const statusRow = tableElem.rows[0].cells[1]
 
   const state = {
     activate: () => {
-      firstRow.textContent = "Active"
-      firstRow.style.color = "green"
+      statusRow.textContent = "Active"
+      statusRow.style.color = "green"
     },
     disable: () => {
-      firstRow.textContent = "Disabled"
-      firstRow.style.color = "red"
+      statusRow.textContent = "Disabled"
+      statusRow.style.color = "red"
     },
   }
 
