@@ -10,5 +10,6 @@ module.exports = {
     // style: less code
     "default-case": "off",
     "no-param-reassign": "off",
+    "no-return-assign": "off",
   },
 }

@@ -1,5 +1,6 @@
 import swipeDown from "./actions/swipeDown"
 import swipeRight from "./actions/swipeRight"
+import swipeUpTriangle from "./actions/swipeUpTriangle"
 import engine from "./engine"
 import ui from "./ui"
 
@@ -15,6 +16,7 @@ const start = () => {
   if (appState.active) {
     swipeDown(canvas)
     swipeRight(canvas)
+    swipeUpTriangle(canvas)
   }
 
   setTimeout(start)
