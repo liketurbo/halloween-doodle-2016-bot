@@ -1,4 +1,5 @@
 import swipeDown from "./actions/swipeDown"
+import swipeDownTriangle from "./actions/swipeDownTriangle"
 import swipeRight from "./actions/swipeRight"
 import swipeUpTriangle from "./actions/swipeUpTriangle"
 import engine from "./engine"
@@ -17,6 +18,7 @@ const start = () => {
     swipeDown(canvas)
     swipeRight(canvas)
     swipeUpTriangle(canvas)
+    swipeDownTriangle(canvas)
   }
 
   setTimeout(start)
