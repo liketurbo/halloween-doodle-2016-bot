@@ -1,3 +1,4 @@
+import lightningSwipe from "./actions/lightningSwipe"
 import swipeDown from "./actions/swipeDown"
 import swipeDownTriangle from "./actions/swipeDownTriangle"
 import swipeRight from "./actions/swipeRight"
@@ -19,6 +20,7 @@ const start = () => {
     swipeRight(canvas)
     swipeUpTriangle(canvas)
     swipeDownTriangle(canvas)
+    lightningSwipe(canvas)
   }
 
   setTimeout(start)
