@@ -28,15 +28,13 @@ const addVisualHelp = elem => {
 
   elem.closest("body").append(tableElem)
 
-  const { top, left, width } = elem.getBoundingClientRect()
+  const { top, left } = elem.getBoundingClientRect()
 
   tableElem.style.fontSize = "5px"
   tableElem.style.fontFamily = "sans-serif"
 
   tableElem.style.position = "fixed"
-  tableElem.style.left = `${left +
-    width -
-    tableElem.getBoundingClientRect().width}px`
+  tableElem.style.left = `${left}px`
   tableElem.style.top = `${top}px`
 
   tableElem.style.background = "white"
