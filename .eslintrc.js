@@ -6,5 +6,9 @@ module.exports = {
     "sort-imports": "off",
     "import/order": "off",
     "simple-import-sort/sort": "error",
+
+    // style: less code
+    "default-case": "off",
+    "no-param-reassign": "off",
   },
 }
