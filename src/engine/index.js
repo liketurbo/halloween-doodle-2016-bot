@@ -3,18 +3,18 @@ import handleRunKeys from "./handleRunKeys"
 const genAppState = canvasElem => {
   const state = {
     activate: () => {
-      state.onActivate()
+      state.onActivate.forEach(fn => fn())
 
       state.active = true
     },
     active: false,
     disable: () => {
-      state.onDisable()
+      state.onDisable.forEach(fn => fn())
 
       state.active = false
     },
-    onActivate: () => null,
-    onDisable: () => null,
+    onActivate: [],
+    onDisable: [],
   }
 
   handleRunKeys(state, canvasElem)

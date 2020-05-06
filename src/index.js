@@ -1,9 +1,5 @@
-import lightningSwipe from "./actions/lightningSwipe"
-import swipeDown from "./actions/swipeDown"
-import swipeDownTriangle from "./actions/swipeDownTriangle"
-import swipeRight from "./actions/swipeRight"
-import swipeUpTriangle from "./actions/swipeUpTriangle"
 import engine from "./engine"
+import swipe from "./swipe"
 import ui from "./ui"
 
 const canvas = window.frames[0].document.querySelector("canvas")
@@ -11,16 +7,18 @@ const canvas = window.frames[0].document.querySelector("canvas")
 const uiState = ui(canvas)
 const appState = engine(canvas)
 
-appState.onActivate = uiState.activate
-appState.onDisable = uiState.disable
+appState.onActivate.push(uiState.activate)
+appState.onDisable.push(uiState.disable)
+
+const swipeTo = swipe(canvas)
 
 const start = () => {
   if (appState.active) {
-    swipeDown(canvas)
-    swipeRight(canvas)
-    swipeUpTriangle(canvas)
-    swipeDownTriangle(canvas)
-    lightningSwipe(canvas)
+    swipeTo("down")
+    swipeTo("right")
+    swipeTo("upTriangle")
+    swipeTo("downTriangle")
+    swipeTo("lightning")
   }
 
   setTimeout(start)
