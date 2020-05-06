@@ -1,32 +1,16 @@
 const swipeDown = canvasElem => {
-  const { x, y, width, height } = canvasElem.getBoundingClientRect()
+  const swipeDownStr =
+    '[{"clientX":296,"clientY":209,"layerX":296,"layerY":143,"offsetX":297,"offsetY":143,"pageX":296,"pageY":209,"screenX":367,"screenY":368,"x":296,"y":209},{"clientX":296,"clientY":209,"layerX":296,"layerY":143,"offsetX":297,"offsetY":144,"pageX":296,"pageY":209,"screenX":367,"screenY":368,"x":296,"y":209},{"clientX":296,"clientY":210,"layerX":296,"layerY":144,"offsetX":297,"offsetY":145,"pageX":296,"pageY":210,"screenX":367,"screenY":369,"x":296,"y":210},{"clientX":296,"clientY":211,"layerX":296,"layerY":145,"offsetX":297,"offsetY":146,"pageX":296,"pageY":211,"screenX":367,"screenY":370,"x":296,"y":211},{"clientX":296,"clientY":213,"layerX":296,"layerY":147,"offsetX":297,"offsetY":148,"pageX":296,"pageY":213,"screenX":367,"screenY":372,"x":296,"y":213},{"clientX":296,"clientY":215,"layerX":296,"layerY":149,"offsetX":297,"offsetY":150,"pageX":296,"pageY":215,"screenX":367,"screenY":374,"x":296,"y":215},{"clientX":296,"clientY":217,"layerX":296,"layerY":151,"offsetX":297,"offsetY":152,"pageX":296,"pageY":217,"screenX":367,"screenY":376,"x":296,"y":217},{"clientX":296,"clientY":220,"layerX":296,"layerY":154,"offsetX":297,"offsetY":155,"pageX":296,"pageY":220,"screenX":367,"screenY":379,"x":296,"y":220},{"clientX":295,"clientY":222,"layerX":295,"layerY":156,"offsetX":296,"offsetY":157,"pageX":295,"pageY":222,"screenX":366,"screenY":381,"x":295,"y":222},{"clientX":294,"clientY":224,"layerX":294,"layerY":158,"offsetX":295,"offsetY":159,"pageX":294,"pageY":224,"screenX":365,"screenY":383,"x":294,"y":224},{"clientX":294,"clientY":225,"layerX":294,"layerY":159,"offsetX":294,"offsetY":160,"pageX":294,"pageY":225,"screenX":364,"screenY":384,"x":294,"y":225},{"clientX":294,"clientY":227,"layerX":294,"layerY":161,"offsetX":294,"offsetY":162,"pageX":294,"pageY":227,"screenX":364,"screenY":386,"x":294,"y":227},{"clientX":294,"clientY":228,"layerX":294,"layerY":162,"offsetX":294,"offsetY":163,"pageX":294,"pageY":228,"screenX":364,"screenY":387,"x":294,"y":228},{"clientX":293,"clientY":229,"layerX":293,"layerY":163,"offsetX":294,"offsetY":163,"pageX":293,"pageY":229,"screenX":364,"screenY":388,"x":293,"y":229},{"clientX":293,"clientY":229,"layerX":293,"layerY":163,"offsetX":294,"offsetY":164,"pageX":293,"pageY":229,"screenX":364,"screenY":388,"x":293,"y":229},{"clientX":293,"clientY":230,"layerX":293,"layerY":164,"offsetX":294,"offsetY":165,"pageX":293,"pageY":230,"screenX":364,"screenY":389,"x":293,"y":230},{"clientX":293,"clientY":231,"layerX":293,"layerY":165,"offsetX":294,"offsetY":165,"pageX":293,"pageY":231,"screenX":364,"screenY":390,"x":293,"y":231},{"clientX":293,"clientY":232,"layerX":293,"layerY":166,"offsetX":294,"offsetY":167,"pageX":293,"pageY":232,"screenX":364,"screenY":391,"x":293,"y":232},{"clientX":293,"clientY":234,"layerX":293,"layerY":168,"offsetX":294,"offsetY":169,"pageX":293,"pageY":234,"screenX":364,"screenY":393,"x":293,"y":234},{"clientX":293,"clientY":235,"layerX":293,"layerY":169,"offsetX":294,"offsetY":169,"pageX":293,"pageY":235,"screenX":364,"screenY":394,"x":293,"y":235},{"clientX":293,"clientY":235,"layerX":293,"layerY":169,"offsetX":294,"offsetY":170,"pageX":293,"pageY":235,"screenX":364,"screenY":394,"x":293,"y":235},{"clientX":293,"clientY":235,"layerX":293,"layerY":169,"offsetX":294,"offsetY":170,"pageX":293,"pageY":235,"screenX":364,"screenY":394,"x":293,"y":235}]'
 
-  const cenX = x + width / 2
-  const cenY = y + height / 2
+  const swipeDownEvs = JSON.parse(swipeDownStr)
 
-  const downEvent = new MouseEvent("mousedown", {
-    clientX: cenX,
-    clientY: cenY,
+  swipeDownEvs.forEach((evtObj, evtIdx) => {
+    if (evtIdx === 0)
+      canvasElem.dispatchEvent(new MouseEvent("mousedown", evtObj))
+    else if (evtIdx === swipeDownEvs.length - 1)
+      canvasElem.dispatchEvent(new MouseEvent("mouseup", evtObj))
+    else canvasElem.dispatchEvent(new MouseEvent("mousemove", evtObj))
   })
-
-  const amp = 50
-
-  const genMoveEvent = par =>
-    new MouseEvent("mousemove", {
-      clientX: cenX,
-      clientY: cenY + amp * par,
-    })
-
-  const upEvent = new MouseEvent("mouseup", {
-    clientX: cenX,
-    clientY: cenY + amp,
-  })
-
-  canvasElem.dispatchEvent(downEvent)
-
-  for (let i = 0; i < 1; i += 0.2) canvasElem.dispatchEvent(genMoveEvent(i))
-
-  canvasElem.dispatchEvent(upEvent)
 }
 
 export default swipeDown
