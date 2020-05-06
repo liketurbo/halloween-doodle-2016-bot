@@ -1,8 +1,8 @@
 const START_AI_CODE = "Digit1"
 const STOP_AI_CODE = "Digit2"
 
-const handleRunKeys = state => {
-  document.addEventListener("keydown", evt => {
+const handleRunKeys = (state, canvasElem) => {
+  canvasElem.parentElement.addEventListener("keydown", evt => {
     switch (evt.code) {
       case START_AI_CODE:
         state.activate()

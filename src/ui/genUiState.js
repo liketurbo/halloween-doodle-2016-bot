@@ -3,15 +3,10 @@ const genState = tableElem => {
 
   const state = {
     activate: () => {
-      state.active = true
-
       firstRow.textContent = "Active"
       firstRow.style.color = "green"
     },
-    active: false,
     disable: () => {
-      state.active = false
-
       firstRow.textContent = "Disabled"
       firstRow.style.color = "red"
     },

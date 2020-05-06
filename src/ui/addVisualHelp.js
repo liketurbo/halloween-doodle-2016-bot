@@ -16,11 +16,11 @@ const addVisualHelp = elem => {
     <tbody>
       <tr>
         <td>1</td>
-        <td>Start AI</td>
+        <td>START AI</td>
       </tr>
       <tr>
         <td>2</td>
-        <td>Stop AI</td>
+        <td>STOP AI</td>
       </tr>
     </tbody>
   `
