@@ -31,3 +31,7 @@ yarn build # or npm run build
 3. Go back to the page with game, open DevTools paste into the console prompt code from the clipboard, hit the `Enter` 😄
 4. Manually finish the game tutorial
 5. Click the `Button 1` to _activate_ bot, click again to _deactivate_
+
+## License
+
+MIT
