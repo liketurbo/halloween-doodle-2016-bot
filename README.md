@@ -1,33 +1,33 @@
+# Halloween Doodle Bot
+
 <p align="center">
-  <a href="https://nodejs.org/">
-    <img alt="Node.js" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1200px-Node.js_logo.svg.png" width="60" />
-  </a>
+    <img alt="Demo" src="demo/ezgif.com-resize.gif" />
 </p>
 
-<h1 align="center">
-  Node.js Starter with Babel
-</h1>
+## Installation
 
-## Features
+1. Copy the repo
 
-- [Babel](https://babeljs.io)
+```bash
+git clone https://github.com/liketurbo/halloween-doodle-2016-bot.git
+```
 
-## Quick start
+2. Install dependencies
 
-1.  **Initialize new project**
+```bash
+yarn # or npm install
+```
 
-    Use the Git CLI to create a project.
+3. Build the project
 
-    ```sh
-    git clone https://github.com/liketurbo/nodejs-starter-babel
-    ```
+```bash
+yarn build # or npm run build
+```
 
-2.  **Start developing**
+## Usage
 
-    Navigate into your new project’s directory and start it up.
-
-    ```sh
-    cd nodejs-starter-babel
-    yarn
-    yarn dev
-    ```
+1. Go to [Halloween 2016](https://www.google.com/doodles/halloween-2016), click the play button 🕹
+2. Locate builded `dist/bot.js` file, copy to the clipboard
+3. Go back to the page with game, open DevTools paste into the console prompt code from the clipboard, hit the `Enter` 😄
+4. Manually finish the game tutorial
+5. Click the `Button 1` to _activate_ bot, click again to _deactivate_

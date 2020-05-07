@@ -4,7 +4,7 @@ module.exports = {
   entry: path.resolve("src"),
   mode: "production",
   output: {
-    filename: "bundle.js",
+    filename: "bot.js",
     path: path.resolve(__dirname, "dist"),
   },
 }
