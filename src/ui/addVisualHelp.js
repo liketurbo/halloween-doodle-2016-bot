@@ -10,7 +10,7 @@ const addVisualHelp = elem => {
         <td style="color:red">Disabled</td>
       </tr>
       <tr>
-        <td>Start/Stop AI</td>
+        <td>Start/Stop Bot</td>
         <td>Press Button "1"</td>
       </tr>
     </tbody>
